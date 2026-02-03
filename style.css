@@ -1,0 +1,171 @@
+@font-face {
+  font-family: 'Myanmar Khyaya';
+  src: url('./fonts/MyanmarKhyaya.ttf') format('truetype');
+}
+
+/* Reset Básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red;  <-- Descomente esta linha se quiser conferir as caixas de novo */
+}
+
+body {
+  font-family: 'Myanmar Khyaya', sans-serif;
+  background: url("FundoOlhuz.png") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  color: #1A1A1A;
+
+}
+
+hr {
+    border: none;             /* Remove as bordas padrão que causam as 2 cores */
+    height: 1px;              /* Define a espessura da linha */
+    background-color: #0077ff85; /* Define a cor real da linha */
+    width: 100%;              /* Garante que ela ocupe a largura toda */
+    margin: 0;                /* Remove espaços extras se necessário */
+}
+
+/* Estilo para o Título Principal */
+.area-1 h1 {
+  color: #0F1A5A;
+  font-size: 55px;
+  padding-left: 100px; 
+  padding-top: 80px;    
+  margin-bottom: 0;     
+}
+
+/* Estilo para a Frase (h2) */
+.area-1 h2 {
+  color: #0F1A5A;       
+  font-size: 24px;      
+  padding-left: 100px;  
+  margin-top: 0px;
+  margin-bottom:45px ;    
+}
+
+.area-1 p {
+  font-family: 'Myanmar Khyaya', sans-serif;;
+  color: #0F1A5A;       
+  font-size: 30px;      
+  padding-left: 100px;  
+  margin-top: 0px;
+  margin-bottom:45px ;    
+}
+
+.area-1 div img {
+width: 50px;
+
+
+
+
+
+}
+
+/* --- CONFIGURAÇÃO DO HEADER --- */
+header {
+  display: flex;
+  align-items: center;            /* Alinha tudo verticalmente no meio */
+  justify-content: space-between; 
+  width: 100%;
+  max-width: 1400px;              /* Largura máxima para monitores grandes */
+  margin: 0 auto;                 /* Centraliza o header na tela */
+  padding: 25px; /* Espaçamento interno (Cima/Baixo e Lados) */
+}
+
+/* --- TRUQUE DE ALINHAMENTO (Lados iguais = Centro perfeito) --- */
+.logo-group, 
+.auth-buttons {
+  flex: 1; /* Faz a Logo e os Botões ocuparem o mesmo espaço proporcional */
+}
+
+/* --- ESTILO DA LOGO (Esquerda) --- */
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-img {
+  width: 55px;
+  height: auto;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-text h2 {
+  font-size: 28px;
+  line-height: 0.9; /* Puxa a frase de baixo para perto */
+  margin-bottom: 2px;
+  font-weight: normal; /* Ajuste se a fonte for muito grossa */
+}
+
+.brand-text p {
+  font-size: 11px;
+  color: #333;
+  line-height: 1.2;
+}
+
+/* --- ESTILO DO MENU (Centro) --- */
+.menu-principal {
+  display: flex;
+  gap: 40px; /* Espaço entre os links */
+  justify-content: center;
+}
+
+.menu-principal a {
+  text-decoration: none;
+  color: #1A1A1A; /* Cor escura quase preta */
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu-principal a:hover {
+  color: #4A90E2;
+}
+
+/* --- ESTILO DOS BOTÕES (Direita) --- */
+.auth-buttons {
+  display: flex;
+  justify-content: flex-end; /* Empurra os botões para a ponta direita */
+  gap: 15px;
+}
+
+.auth-buttons button {
+  padding: 10px 32px; /* Deixa o botão mais largo ("gordinho") */
+  border-radius: 50px; /* Borda bem redonda */
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Botão Entrar (Azul Sólido) */
+.btn-entrar {
+  background-color: #4A90E2;
+  color: white;
+  border: 1px solid #4A90E2; /* Borda da mesma cor para manter tamanho igual */
+}
+
+.btn-entrar:hover {
+  background-color: #357ABD;
+}
+
+/* Botão Cadastrar (Transparente) */
+.btn-cadastrar {
+  background-color: transparent;
+  color: #4A90E2;
+  border: 1px solid #4A90E2;
+}
+
+.btn-cadastrar:hover {
+  background-color: rgba(74, 144, 226, 0.1);
+}
