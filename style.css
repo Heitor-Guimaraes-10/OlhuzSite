@@ -3,12 +3,10 @@
   src: url('./fonts/MyanmarKhyaya.ttf') format('truetype');
 }
 
-/* Reset Básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* outline: 1px solid red;  <-- Descomente esta linha se quiser conferir as caixas de novo */
 }
 
 body {
@@ -16,156 +14,177 @@ body {
   background: url("FundoOlhuz.png") no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
-  color: #1A1A1A;
-
+  color: #0F1A5A;
 }
 
 hr {
-    border: none;             /* Remove as bordas padrão que causam as 2 cores */
-    height: 1px;              /* Define a espessura da linha */
-    background-color: #0077ff85; /* Define a cor real da linha */
-    width: 100%;              /* Garante que ela ocupe a largura toda */
-    margin: 0;                /* Remove espaços extras se necessário */
+  border: none;
+  height: 1px;
+  background-color: #2f7cf6;
+  width: 100%;
 }
 
-/* Estilo para o Título Principal */
-.area-1 h1 {
-  color: #0F1A5A;
-  font-size: 55px;
-  padding-left: 100px; 
-  padding-top: 80px;    
-  margin-bottom: 0;     
-}
-
-/* Estilo para a Frase (h2) */
-.area-1 h2 {
-  color: #0F1A5A;       
-  font-size: 24px;      
-  padding-left: 100px;  
-  margin-top: 0px;
-  margin-bottom:45px ;    
-}
-
-.area-1 p {
-  font-family: 'Myanmar Khyaya', sans-serif;;
-  color: #0F1A5A;       
-  font-size: 30px;      
-  padding-left: 100px;  
-  margin-top: 0px;
-  margin-bottom:45px ;    
-}
-
-.area-1 div img {
-width: 50px;
-
-
-
-
-
-}
-
-/* --- CONFIGURAÇÃO DO HEADER --- */
 header {
   display: flex;
-  align-items: center;            /* Alinha tudo verticalmente no meio */
-  justify-content: space-between; 
-  width: 100%;
-  max-width: 1400px;              /* Largura máxima para monitores grandes */
-  margin: 0 auto;                 /* Centraliza o header na tela */
-  padding: 25px; /* Espaçamento interno (Cima/Baixo e Lados) */
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 18px 40px;
 }
 
-/* --- TRUQUE DE ALINHAMENTO (Lados iguais = Centro perfeito) --- */
-.logo-group, 
-.auth-buttons {
-  flex: 1; /* Faz a Logo e os Botões ocuparem o mesmo espaço proporcional */
-}
-
-/* --- ESTILO DA LOGO (Esquerda) --- */
 .logo-group {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex: 1;
 }
 
 .logo-img {
-  width: 55px;
-  height: auto;
-}
-
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: 48px;
 }
 
 .brand-text h2 {
-  font-size: 28px;
-  line-height: 0.9; /* Puxa a frase de baixo para perto */
-  margin-bottom: 2px;
-  font-weight: normal; /* Ajuste se a fonte for muito grossa */
+  font-size: 26px;
+  font-weight: normal;
+  line-height: 1;
 }
 
 .brand-text p {
   font-size: 11px;
-  color: #333;
-  line-height: 1.2;
+  color: #1A1A1A;
 }
 
-/* --- ESTILO DO MENU (Centro) --- */
 .menu-principal {
   display: flex;
-  gap: 40px; /* Espaço entre os links */
+  gap: 45px;
   justify-content: center;
+  flex: 1;
 }
 
 .menu-principal a {
   text-decoration: none;
-  color: #1A1A1A; /* Cor escura quase preta */
   font-size: 16px;
-  font-weight: 500;
-  transition: color 0.3s;
+  color: #1A1A1A;
 }
 
-.menu-principal a:hover {
-  color: #4A90E2;
-}
-
-/* --- ESTILO DOS BOTÕES (Direita) --- */
 .auth-buttons {
   display: flex;
-  justify-content: flex-end; /* Empurra os botões para a ponta direita */
-  gap: 15px;
+  justify-content: flex-end;
+  gap: 12px;
+  flex: 1;
 }
 
 .auth-buttons button {
-  padding: 10px 32px; /* Deixa o botão mais largo ("gordinho") */
-  border-radius: 50px; /* Borda bem redonda */
+  padding: 8px 26px;
+  border-radius: 50px;
+  font-size: 14px;
   font-family: inherit;
-  font-size: 16px;
-  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-/* Botão Entrar (Azul Sólido) */
 .btn-entrar {
   background-color: #4A90E2;
-  color: white;
-  border: 1px solid #4A90E2; /* Borda da mesma cor para manter tamanho igual */
+  border: none;
+  color: #fff;
 }
 
-.btn-entrar:hover {
-  background-color: #357ABD;
-}
-
-/* Botão Cadastrar (Transparente) */
 .btn-cadastrar {
   background-color: transparent;
-  color: #4A90E2;
   border: 1px solid #4A90E2;
+  color: #4A90E2;
 }
 
-.btn-cadastrar:hover {
-  background-color: rgba(74, 144, 226, 0.1);
+.area-1 {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 70px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+
+.content-left {
+  max-width: 600px;
+}
+
+.area-1 h1 {
+  font-size: 48px;
+  font-weight: normal;
+  margin-bottom: 8px;
+  gap: 200px;
+}
+
+.area-1 h2 {
+  font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.area-1 p {
+  font-size: 22px;
+  margin-bottom: 10px;
+  margin-top:30px;
+}
+
+.area-1 h3 {
+  font-size: 25px;
+  font-weight: normal;
+  margin-top: 20px;
+}
+
+.icones {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.icones img {
+  width: 36px;
+}
+
+.logo-inicial {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo-inicial img {
+  width: 300px;
+  padding-right: 100px;
+}
+
+.area-2 {
+  width: 100%;
+  padding: 80px 40px 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.area-2 h2 {
+  font-size: 46px;
+  font-weight: normal;
+  color: #0F1A5A;
+  margin-bottom: 60px;
+}
+
+.cards {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.card-1, .card-2, .card-3 {
+  width: 300px;
+  height: 180px;
+  border-radius: 22px;
+  background: url(FundoOlhuz.png);
+}
+.destaque {
+  color: #4A90E2;
+  text-shadow: 0 0 6px rgba(74, 144, 226, 0.35);
+}
+
