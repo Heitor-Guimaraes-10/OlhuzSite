@@ -3,6 +3,7 @@
   src: url('./fonts/MyanmarKhyaya.ttf') format('truetype');
 }
 
+/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -13,96 +14,103 @@ body {
   font-family: 'Myanmar Khyaya', sans-serif;
   background: url("FundoOlhuz.png") no-repeat center center fixed;
   background-size: cover;
-  min-height: 100vh;
   color: #0F1A5A;
+  overflow-x: hidden;
 }
 
+:root {
+  --padding-lateral: clamp(20px, 5vw, 60px);
+}
+
+/* DIVISÓRIA */
 hr {
   border: none;
-  height: 1px;
+  height: 2px;
   background-color: #2f7cf6;
   width: 100%;
+  opacity: 0.3;
 }
 
+/* HEADER */
 header {
+  width: 100%;
+  padding: 15px var(--padding-lateral);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 18px 40px;
 }
 
 .logo-group {
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex: 1;
+  gap: 15px;
 }
 
 .logo-img {
-  width: 80px;
-  height: 60px;
+  width: 60px; /* Reduzido para caber melhor */
 }
 
 .brand-text h2 {
-  font-size: 26px;
-  font-weight: normal;
+  font-size: 24px;
   line-height: 1;
 }
 
 .brand-text p {
-  font-size: 11px;
-  color: #1A1A1A;
+  font-size: 12px;
 }
 
+/* MENU */
 .menu-principal {
   display: flex;
-  gap: 45px;
-  justify-content: center;
-  flex: 1;
+  gap: 30px;
 }
 
 .menu-principal a {
+  font-size: 18px;
+  font-weight: bold;
   text-decoration: none;
-  font-size: 16px;
   color: #1A1A1A;
+  transition: 0.3s;
 }
 
-.auth-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 12px;
-  flex: 1;
-}
-
-.auth-buttons button {
-  padding: 8px 26px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-family: inherit;
-  cursor: pointer;
-}
-
-.btn-entrar {
-  background-color: #4A90E2;
-  border: none;
-  color: #fff;
-}
-
-.btn-cadastrar {
-  background-color: transparent;
-  border: 1px solid #4A90E2;
+.menu-principal a:hover {
   color: #4A90E2;
 }
 
+/* BOTÕES */
+.auth-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.auth-buttons button {
+  padding: 10px 25px;
+  border-radius: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-entrar {
+  background: #4A90E2;
+  border: none;
+  color: white;
+}
+
+.btn-cadastrar {
+  background: transparent;
+  border: 2px solid #4A90E2;
+  color: #4A90E2;
+}
+
+/* AREA 1 (HERO) */
 .area-1 {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 70px 40px;
+  width: 100%;
+  padding: 60px var(--padding-lateral); /* Reduzido de 120px */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 40px;
 }
 
 .content-left {
@@ -110,153 +118,110 @@ header {
 }
 
 .area-1 h1 {
-  font-size: 48px;
-  font-weight: normal;
-  margin-bottom: 8px;
-  gap: 200px;
-  font-weight: bold;
+  font-size: clamp(32px, 5vw, 56px); /* Reduzido */
+  margin-bottom: 5px;
 }
 
 .area-1 h2 {
-  font-size: 30px;
-  font-weight: normal;
-  margin-bottom: 10px;
-  font-weight: bold;
-  
+  font-size: clamp(20px, 3vw, 32px);
+  color: #1a3a8a;
 }
 
 .area-1 p {
-  font-size: 22px;
-  margin-bottom: 10px;
-  margin-top:30px;
-  font-weight: bold;
+  font-size: 20px;
+  margin-top: 15px;
 }
 
-.area-1 h3 {
-  font-size: 25px;
-  font-weight: normal;
-  margin-top: 20px;
-  font-weight: bold;
+.download-section h3 {
+  font-size: 22px;
+  margin-top: 25px;
 }
 
 .icones {
   display: flex;
-  gap: 18px;
-  margin-top: 10px;
+  gap: 15px;
+  margin-top: 15px;
 }
 
 .icones img {
-  width: 36px;
-}
-
-.logo-inicial {
-  display: flex;
-  justify-content: flex-end;
+  width: 35px;
+  cursor: pointer;
 }
 
 .logo-inicial img {
-  width: 370px;
-  padding-right: 100px;
+  width: min(400px, 35vw); /* Reduzido para não empurrar o layout */
 }
 
+/* AREA 2 (CARDS) */
 .area-2 {
   width: 100%;
-  padding: 80px 40px 100px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 40px var(--padding-lateral) 80px;
+  text-align: center;
 }
 
 .area-2 h2 {
-  font-size: 46px;
-  font-weight: normal;
-  color: #0F1A5A;
-  margin-bottom: 60px;
-  font-weight: bold;
+  font-size: clamp(28px, 4vw, 48px);
+  margin-bottom: 50px;
 }
 
 .cards {
   display: flex;
+  gap: 30px;
   justify-content: center;
-  gap: 50px;
-  background-color: white;
-  color: white;
+  flex-wrap: wrap;
 }
 
-.cards h3 {
-  color:#8cc2ff;
-  font-weight: bold; 
-}
-
-.card-1, .card-2, .card-3 {
-  width: 300px;
-  height: 180px;
-  border-radius: 22px;
-  background: url(FundoCards.png) center/cover no-repeat;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-
-}
-
-
-.card-1 {
+.card {
+  width: 300px; /* Reduzido de 360px */
+  min-height: 250px;
+  border-radius: 20px;
+  background: white; /* Fallback caso a imagem falhe */
+  background-image: url('CardsOlhuz.png'); 
+  background-size: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
   padding: 20px;
+  transition: transform 0.3s;
 }
 
-
-.card-1 img {
-  width: 165px;
-  margin-bottom: -45px;
-  margin-top: -20px;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.card-2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+.card-icon {
+    height: 100px;
+    display: flex;
+    align-items: center;
 }
 
-
-.card-2 img {
-  width: 160px;
-  margin-bottom: -20px;
-  margin-top:   6px;
-}
- 
-
-
-.card-3 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px;
+.card img {
+  width: 120px;
 }
 
-
-.card-3 img {
-  width: 185px;
-  margin-bottom: -15px;
-  margin-top: 5px;
+.card h3 {
+  font-size: 20px;
+  margin: 10px 0;
 }
 
-.card-content {
-  align-items: center;
-  padding: 16px;
+.card p {
+  font-size: 14px;
+  line-height: 1.4;
 }
-
-
 
 .destaque {
   color: #4A90E2;
-  text-shadow: 0 0 6px rgba(74, 144, 226, 0.35);
+}
+
+/* 📱 RESPONSIVO */
+@media (max-width: 1024px) {
+    .menu-principal { gap: 15px; }
+    .area-1 { flex-direction: column; text-align: center; }
+    .icones { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 15px; }
+  .auth-buttons { width: 100%; justify-content: center; }
 }
