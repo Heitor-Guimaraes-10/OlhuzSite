@@ -42,7 +42,7 @@ header {
 
 .logo-img {
   width: 80px;
-  height: 50px;
+  height: 60px;
 }
 
 .brand-text h2 {
@@ -114,24 +114,29 @@ header {
   font-weight: normal;
   margin-bottom: 8px;
   gap: 200px;
+  font-weight: bold;
 }
 
 .area-1 h2 {
   font-size: 30px;
   font-weight: normal;
   margin-bottom: 10px;
+  font-weight: bold;
+  
 }
 
 .area-1 p {
   font-size: 22px;
   margin-bottom: 10px;
   margin-top:30px;
+  font-weight: bold;
 }
 
 .area-1 h3 {
   font-size: 25px;
   font-weight: normal;
   margin-top: 20px;
+  font-weight: bold;
 }
 
 .icones {
@@ -150,7 +155,7 @@ header {
 }
 
 .logo-inicial img {
-  width: 300px;
+  width: 370px;
   padding-right: 100px;
 }
 
@@ -168,21 +173,29 @@ header {
   font-weight: normal;
   color: #0F1A5A;
   margin-bottom: 60px;
+  font-weight: bold;
 }
 
 .cards {
   display: flex;
   justify-content: center;
   gap: 50px;
+  background-color: white;
+  color: white;
 }
 
+.cards h3 {
+  color:#8cc2ff;
+  font-weight: bold; 
+}
 
 .card-1, .card-2, .card-3 {
   width: 300px;
   height: 180px;
   border-radius: 22px;
-  background: url(CardsOlhuz.png) center/cover no-repeat;
+  background: url(FundoCards.png) center/cover no-repeat;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+
 }
 
 
@@ -198,8 +211,8 @@ header {
 
 .card-1 img {
   width: 165px;
-  margin-bottom: 12px;
-  margin-top: 10px;
+  margin-bottom: -45px;
+  margin-top: -20px;
 }
 
 .card-2 {
@@ -214,7 +227,7 @@ header {
 
 .card-2 img {
   width: 160px;
-  margin-bottom: -6px;
+  margin-bottom: -20px;
   margin-top:   6px;
 }
  
@@ -231,8 +244,8 @@ header {
 
 
 .card-3 img {
-  width: 105px;
-  margin-bottom: 5px;
+  width: 185px;
+  margin-bottom: -15px;
   margin-top: 5px;
 }
 
