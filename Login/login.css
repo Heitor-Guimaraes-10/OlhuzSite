@@ -1,0 +1,167 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BODY */
+body {
+  background: white;
+}
+
+/* HEADER */
+header {
+  height: 80px;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: url(../Image/HeaderOlhuz.png);
+  position: relative;
+  z-index: 2;
+}
+
+/* remove o hr do HTML */
+/* apague a linha <hr> do seu HTML */
+
+/* LOGO */
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 50px;
+}
+
+.brand-text h1 {
+  font-size: 24px;
+}
+
+.brand-text p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* MENU */
+.menu-principal a {
+  color: black;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.menu-principal a:hover {
+  opacity: 0.7;
+}
+
+/* LAYOUT PRINCIPAL */
+.layout {
+  display: flex;
+  min-height: 100vh;
+ 
+}
+
+/* ========================= */
+/* LADO ESQUERDO */
+/* ========================= */
+
+.lado-esquerdo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 8%;
+  padding-top: 120px; /* compensa o header */
+  background: url("../Image/FundoOlhuz.png");
+  background-size: cover;
+  background-position: top left;
+  background-repeat: no-repeat;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  overflow: hidden;
+}
+
+.conteudo-esquerdo {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.conteudo-esquerdo img {
+  width: 180px;
+  margin-bottom: 30px;
+}
+
+.conteudo-esquerdo h2 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a3a8a;
+}
+
+.subtitulo {
+  font-size: 26px;
+  margin-top: 10px;
+  opacity: 0.9;
+  color: #1a3a8a;
+}
+
+/* ========================= */
+/* LADO DIREITO */
+/* ========================= */
+
+.lado-branco {
+  width: 45%;
+  background: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CARD LOGIN */
+.card {
+  width: 70%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card h3 {
+  margin-bottom: 30px;
+  color: #1a3a8a;
+  font-size: 28px;
+}
+
+.card input {
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.card input:focus {
+  outline: none;
+  border-color: #1a3a8a;
+}
+
+.card button {
+  padding: 12px;
+  background: #1a3a8a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: #4A90E2;
+}

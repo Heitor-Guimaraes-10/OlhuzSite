@@ -1,0 +1,222 @@
+
+@font-face {
+  font-family: 'Myanmar Khyaya';
+  src: url('./fonts/MyanmarKhyaya.ttf') format('truetype');
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Myanmar Khyaya', sans-serif;
+  background: url("../Image/FundoOlhuz.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #0F1A5A;
+  overflow-x: hidden;
+}
+
+:root {
+  --padding-lateral: clamp(20px, 5vw, 60px);
+}
+
+/* DIVISÓRIA */
+hr {
+  border: none;
+  height: 2px;
+  background-color: #2f7cf6;
+  width: 100%;
+  opacity: 0.3;
+}
+
+/* HEADER */
+header {
+  width: 100%;
+  padding: 15px var(--padding-lateral);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: url(../Image/HeaderOlhuz.png);
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 60px; /* Reduzido para caber melhor */
+}
+
+.brand-text h2 {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.brand-text p {
+  font-size: 12px;
+}
+
+/* MENU */
+.menu-principal {
+  display: flex;
+  gap: 30px;
+}
+
+.menu-principal a {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #1A1A1A;
+  transition: 0.3s;
+}
+
+.menu-principal a:hover {
+  color: #4A90E2;
+}
+
+
+
+
+
+.btn-entrar {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 120px; /* Ajuste para o tamanho da imagem */
+}
+
+.btn-entrar img {
+  width: 100px; /* tamanho que você quiser */
+  display: block;
+}
+
+
+/* AREA 1 (HERO) */
+.area-1 {
+  width: 100%;
+  padding: 60px var(--padding-lateral); /* Reduzido de 120px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.content-left {
+  max-width: 600px;
+}
+
+.area-1 h1 {
+  font-size: clamp(32px, 5vw, 56px); /* Reduzido */
+  margin-bottom: 5px;
+}
+
+.area-1 h2 {
+  font-size: clamp(20px, 3vw, 32px);
+  color: #1a3a8a;
+}
+
+.area-1 p {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.download-section h3 {
+  font-size: 22px;
+  margin-top: 25px;
+}
+
+.icones {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.icones img {
+  width: 35px;
+  cursor: pointer;
+}
+
+.logo-inicial img {
+  width: min(400px, 35vw); /* Reduzido para não empurrar o layout */
+}
+
+/* AREA 2 (CARDS) */
+.area-2 {
+  width: 100%;
+  padding: 40px var(--padding-lateral) 80px;
+  text-align: center;
+}
+
+.area-2 h2 {
+  font-size: clamp(28px, 4vw, 48px);
+  margin-bottom: 50px;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px; /* Reduzido de 360px */
+  min-height: 250px;
+  border-radius: 20px;
+  background: white; /* Fallback caso a imagem falhe */
+  background-image: url('../Image/CardsOlhuz.png'); 
+  background-size: cover;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.card img {
+  width: 120px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.destaque {
+  color: #4A90E2;
+}
+
+/* 📱 RESPONSIVO */
+@media (max-width: 1024px) {
+    .menu-principal { gap: 15px; }
+    .area-1 { flex-direction: column; text-align: center; }
+    .icones { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 15px; }
+  .auth-buttons { width: 100%; justify-content: center; }
+}
+
