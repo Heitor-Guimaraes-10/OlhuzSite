@@ -10,8 +10,7 @@ body {
   background: white;
 }
 
-/* ================= HEADER ================= */
-
+/* HEADER (MESMO DO LOGIN) */
 header {
   height: 80px;
   padding: 0 60px;
@@ -19,7 +18,6 @@ header {
   justify-content: space-between;
   align-items: center;
   background: url(../Image/HeaderOlhuz.png);
-  z-index: 2;
 }
 
 .logo-group {
@@ -42,29 +40,24 @@ header {
 }
 
 .menu-principal a {
-  color: rgb(0, 0, 0);
+  color: black;
   text-decoration: none;
   margin-left: 30px;
   font-weight: 500;
-  transition: 0.3s;
 }
 
 .menu-principal a:hover {
-  opacity: 1;
   color: #002480;
   text-decoration: underline;
-  
 }
 
-/* ================= LAYOUT ================= */
-
+/* LAYOUT */
 .layout {
   display: flex;
   min-height: calc(100vh - 80px);
 }
 
-/* ================= LADO ESQUERDO ================= */
-
+/* LADO ESQUERDO */
 .lado-esquerdo {
   flex: 1;
   display: flex;
@@ -72,50 +65,40 @@ header {
   align-items: center;
   background: url("../Image/FundoOlhuz.png");
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   border-top-right-radius: 80px;
   border-bottom-right-radius: 80px;
 }
 
 .conteudo-esquerdo {
-  max-width: 750px; /* aumentei */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 750px;
   text-align: center;
 }
 
 .conteudo-esquerdo img {
-  width: 220px; /* logo maior */
-  margin-bottom: 40px;
+  width: 200px;
+  margin-bottom: 30px;
 }
 
 .conteudo-esquerdo h2 {
-  font-size: 62px; /* título maior */
-  font-weight: 700;
-  line-height: 1.15;
+  font-size: 48px;
   color: #1a3a8a;
 }
 
 .subtitulo {
-  font-size: 30px; /* subtítulo maior */
-  margin-top: 20px;
+  font-size: 22px;
+  margin-top: 15px;
   color: #1a3a8a;
 }
 
-/* ================= LADO DIREITO ================= */
-
+/* LADO DIREITO */
 .lado-branco {
   width: 45%;
-  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* ================= CARD LOGIN ================= */
-
+/* CARD */
 .card {
   width: 75%;
   max-width: 420px;
@@ -130,13 +113,13 @@ header {
   font-size: 30px;
 }
 
+/* INPUTS */
 .card input {
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   padding: 14px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 16px;
 }
 
 .card input:focus {
@@ -144,6 +127,7 @@ header {
   border-color: #1a3a8a;
 }
 
+/* BOTÃO */
 .card button {
   width: 100%;
   padding: 14px;
@@ -151,7 +135,6 @@ header {
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -160,15 +143,12 @@ header {
   background: #4A90E2;
 }
 
-.card p {
-  margin-top: -10px;
-  margin-bottom: 35px;
-  font-size: 13px;
-  color: #1a3a8a;
-  cursor: pointer;
+/* SENHA */
+.campoSenha small {
+  font-size: 12px;
+  display: block;
+  margin-bottom: 10px;
 }
-
-/* ================= CARD INTERNO ================= */
 
 .card-interno {
   width: 100%;
@@ -205,4 +185,52 @@ header {
 
 .btn-criar:hover {
   background: #4A90E2;
+}
+/* BARRA DE FORÇA */
+.barraForcaContainer {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.barraForca {
+  height: 100%;
+  width: 0%;
+  transition: 0.3s ease;
+  border-radius: 10px;
+}
+
+/* TEXTO DICAS */
+.dicasSenha {
+  display: block;
+  font-size: 12px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.inputComOlho {
+  position: relative;
+  width: 100%;
+}
+
+.inputComOlho input {
+  padding-right: 40px;
+}
+
+.olho {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #777;
+  transition: 0.2s;
+}
+
+.olho:hover {
+  color: #1a3a8a;
 }

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Olhuz</title>
   <link rel="stylesheet" href="login.css">
+
 </head>
 <body>
 
@@ -19,7 +20,7 @@
     </div>
 
     <nav class="menu-principal">
-      <a href="#">Início</a>
+      <a href="../Inicial/Index.html">Início</a>
       <a href="#">Recursos</a>
       <a href="#">Sobre</a>
       <a href="#">Contato</a>
@@ -35,7 +36,7 @@
     <section class="lado-esquerdo">
       <div class="conteudo-esquerdo">
         <img src="../image/logoOlhuz.png" alt="Logo Olhuz">
-        <h2>Bem-vindo ao Olhuz!</h2>
+        <h2>Bem-vindo<br>novamente<br>ao<br>Olhuz!</h2>
         <p class="subtitulo">A tecnologia que ilumina o invisível</p>
       </div>
     </section>
@@ -43,14 +44,21 @@
     <!-- LADO DIREITO -->
     <section class="lado-branco">
       <div class="card">
-        <h3>Login</h3>
-        <input type="text" placeholder="Usuário">
-        <input type="password" placeholder="Senha">
-        <button>Entrar</button>
+        <h3>Entrar</h3>
+       <input type="email" id="loginEmail">
+       <input type="password" id="loginSenha">
+        <p>Esqueceu a Senha? Clique aqui para redefinir</p>
+        <button id="btnEntrar">Entrar</button>
+        
+        <div class="card-interno">
+          <h3>Não tem uma conta?<br> Clique aqui para criar</h3>
+        <a href="../CriarConta/CriarConta.html" class="btn-criar">Criar Conta</a>
+                </div>
       </div>
     </section>
 
   </main>
 
+  <script src="login.js"></script>
 </body>
 </html>
