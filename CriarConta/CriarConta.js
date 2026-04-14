@@ -118,7 +118,7 @@ form.addEventListener("submit", async (e) => {
   };
 
   try {
-    const resposta = await fetch("https://localhost:7249/Usuarios/create", {
+    const resposta = await fetch("https://localhost:7006/api/CriarConta", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
