@@ -1,0 +1,181 @@
+
+@font-face {
+  font-family: 'Myanmar Khyaya';
+  src: url('./fonts/MyanmarKhyaya.ttf') format('truetype');
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Myanmar Khyaya', sans-serif;
+  background-color: #d8ebff; 
+  background-image: url("../Image/FundoOlhuz.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #0F1A5A;
+  overflow-x: hidden;
+}
+
+:root {
+  --padding-lateral: clamp(20px, 5vw, 60px);
+}
+
+/* DIVISÓRIA */
+hr {
+  border: none;
+  height: 2px;
+  background-color: #2f7cf6;
+  width: 100%;
+  opacity: 0.3;
+}
+
+/* HEADER */
+header {
+  height: 80px;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: url(../Image/HeaderOlhuz.png);
+  position: relative;
+  z-index: 2;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 60px; /* Reduzido para caber melhor */
+}
+
+.brand-text h2 {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.brand-text p {
+  font-size: 12px;
+}
+
+/* MENU */
+.menu-principal {
+  display: flex;
+  gap: 30px;
+}
+
+.menu-principal a {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #1A1A1A;
+  transition: 0.3s;
+}
+
+.menu-principal a:hover {
+  color: #4A90E2;
+}
+
+.btn-entrar {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 120px; /* Ajuste para o tamanho da imagem */
+}
+
+.btn-entrar img {
+  width: 100px; /* tamanho que você quiser */
+  display: block;
+}
+
+.dashboard {
+  display: grid;
+  /* Criamos 4 colunas iguais e 2 linhas principais */
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 400px 180px; /* Altura do card grande e dos pequenos */
+  gap: 20px;
+  padding: 30px var(--padding-lateral);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Estilo Base dos Cards */
+.card {
+  background: rgba(255, 255, 255, 0.15); /* Efeito de vidro */
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(15, 26, 90, 0.3);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0F1A5A;
+  font-family: inherit;
+}
+
+/* Efeito de Hover e Foco (Essencial para quem tem baixa visão) */
+.card:hover, .card:focus {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: #2f7cf6;
+  outline: 4px solid #2f7cf6; /* Feedback visual forte */
+  transform: scale(1.02);
+}
+
+/* Posicionamento Específico (Conforme seu Protótipo) */
+
+.card-principal {
+  grid-column: span 3; /* Ocupa 3 das 4 colunas */
+}
+
+.card-secundario {
+  grid-column: span 1; /* Ocupa a última coluna da primeira linha */
+}
+
+.card-inferior {
+  grid-column: span 2; /* Cada um ocupa metade da linha de baixo */
+}
+
+/* Conteúdo interno */
+.card-title {
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+
+/* 📱 Ajuste para Celular (Um card abaixo do outro) */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  .card-principal, .card-secundario, .card-inferior {
+    grid-column: span 1;
+    height: 200px;
+  }
+}
+
+
+/* 📱 RESPONSIVO */
+@media (max-width: 1024px) {
+    .menu-principal { gap: 15px; }
+    .area-1 { flex-direction: column; text-align: center; }
+    .icones { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 15px; }
+  .auth-buttons { width: 100%; justify-content: center; }
+}
+

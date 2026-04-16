@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const senha = document.getElementById("loginSenha").value;
 
     if (!email || !senha) {
-      alerta("Preencha email e senha", "aviso");
+      alert("Preencha email e senha", "aviso");
       return;
     }
 
@@ -38,14 +38,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (!resposta.ok) {
-        alerta("Email ou senha inválidos ❌", "erro");
+        alert("Email ou senha inválidos ❌", "erro");
         return;
       }
 
       const dados = await resposta.json();
       localStorage.setItem("usuarioLogado", JSON.stringify(dados));
 
-      alerta("Login realizado com sucesso 🎉", "sucesso");
+      alert("Login realizado com sucesso 🎉", "sucesso");
 
       setTimeout(() => {
         window.location.href = "../PaginaInicial/PaginaInicial.html";
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } catch (erro) {
       console.error(erro);
-      alerta("Servidor offline 🚨", "erro");
+      alert("Servidor offline 🚨", "erro");
     }
   });
 
