@@ -17,44 +17,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 🔐 LOGIN
   btnEntrar.addEventListener("click", async () => {
-    const email = document.getElementById("loginEmail").value.trim();
-    const senha = document.getElementById("loginSenha").value;
+  const email = document.getElementById("loginEmail").value.trim();
+  const senha = document.getElementById("loginSenha").value;
 
-    if (!email || !senha) {
-      alert("Preencha email e senha", "aviso");
+  if (!email || !senha) {
+    alert("Preencha email e senha");
+    return;
+  }
+
+  // 🔥 ATIVA LOADING
+  btnEntrar.classList.add("loading");
+  btnEntrar.disabled = true;
+
+  try {
+    const resposta = await fetch("https://localhost:7006/api/Login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        Email: email,
+        Senha: senha
+      })
+    });
+
+    if (!resposta.ok) {
+      alert("Email ou senha inválidos ❌");
       return;
     }
 
-    try {
-      const resposta = await fetch("https://localhost:7006/api/Login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          Email: email,
-          Senha: senha
-        })
-      });
+    const dados = await resposta.json();
+    localStorage.setItem("usuarioLogado", JSON.stringify(dados));
 
-      if (!resposta.ok) {
-        alert("Email ou senha inválidos ❌", "erro");
-        return;
-      }
+    alert("Login realizado com sucesso 🎉");
 
-      const dados = await resposta.json();
-      localStorage.setItem("usuarioLogado", JSON.stringify(dados));
+    setTimeout(() => {
+      window.location.href = "../PaginaInicial/PaginaInicial.html";
+    }, 1200);
 
-      alert("Login realizado com sucesso 🎉", "sucesso");
-
-      setTimeout(() => {
-        window.location.href = "../PaginaInicial/PaginaInicial.html";
-      }, 1200);
-
-    } catch (erro) {
-      console.error(erro);
-      alert("Servidor offline 🚨", "erro");
-    }
-  });
+  } catch (erro) {
+    console.error(erro);
+    alert("Servidor offline 🚨");
+  } finally {
+    // 🔥 DESATIVA LOADING (sempre roda, até se der erro)
+    btnEntrar.classList.remove("loading");
+    btnEntrar.disabled = false;
+  }
+});
 
 });
