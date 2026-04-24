@@ -56,6 +56,14 @@ header {
   
 }
 
+hr {
+  border: none;
+  height: 2px;
+  background-color: #2f7cf6;
+  width: 100%;
+  opacity: 0.3;
+}
+
 /* ================= LAYOUT ================= */
 
 .layout {

@@ -48,6 +48,14 @@ header {
   z-index: 2;
 }
 
+hr {
+  border: none;
+  height: 2px;
+  background-color: #2f7cf6;
+  width: 100%;
+  opacity: 0.3;
+}
+
 .logo-group {
   display: flex;
   align-items: center;
