@@ -77,6 +77,8 @@ function validar() {
 senhaInput.addEventListener("input", validar);
 confirmarSenha.addEventListener("input", validar);
 
+validar();
+
 // =============================
 // OLHO SENHA
 // =============================
@@ -117,6 +119,10 @@ form.addEventListener("submit", async (e) => {
     CPF: cpfInput.value.replace(/\D/g, "")
   };
 
+  // 🔥 ATIVA LOADING
+  btn.classList.add("loading");
+  btn.disabled = true;
+
   try {
     const resposta = await fetch("https://localhost:7006/api/CriarConta", {
       method: "POST",
@@ -128,10 +134,7 @@ form.addEventListener("submit", async (e) => {
 
     if (resposta.ok) {
       alert("Conta criada com sucesso! 🎉");
-
-      // opcional: redireciona pro login
       window.location.href = "../Login/Login.html";
-
     } else {
       const erro = await resposta.text();
       alert("Erro: " + erro);
@@ -140,7 +143,10 @@ form.addEventListener("submit", async (e) => {
   } catch (err) {
     console.error(err);
     alert("Servidor offline 🚨");
+  } finally {
+    // 🔥 DESLIGA LOADING
+    btn.classList.remove("loading");
+    btn.disabled = false;
   }
 });
 
-btn.disabled = true;

@@ -168,6 +168,46 @@ header {
   cursor: pointer;
 }
 
+/* ===== LOADING BUTTON ===== */
+
+#btnEntrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Spinner */
+.loader-btn {
+  width: 18px;
+  height: 18px;
+  border: 3px solid white;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  display: none;
+  animation: girar 0.8s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Estado carregando */
+#btnEntrar.loading .loader-btn {
+  display: inline-block;
+}
+
+#btnEntrar.loading .texto-btn {
+  opacity: 0.7;
+}
+
+#btnEntrar.loading {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
 /* ================= CARD INTERNO ================= */
 
 .card-interno {
@@ -205,4 +245,35 @@ header {
 
 .btn-criar:hover {
   background: #4A90E2;
+}
+
+/* ================= INPUT COM OLHO ================= */
+
+.input-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 45px 14px 14px; /* espaço pro olho */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.input-group .olho {
+  position: absolute;
+  right: 12px;
+  top: 42%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #888;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.input-group .olho:hover {
+  color: #1a3a8a;
 }
