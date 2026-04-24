@@ -50,6 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("usuarioLogado", JSON.stringify(dados));
 
     alert("Login realizado com sucesso 🎉");
+  btnEntrar.classList.remove("loading");
+
 
     setTimeout(() => {
       window.location.href = "../PaginaInicial/PaginaInicial.html";

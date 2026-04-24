@@ -144,7 +144,7 @@ form.addEventListener("submit", async (e) => {
     console.error(err);
     alert("Servidor offline 🚨");
   } finally {
-    // 🔥 DESLIGA LOADING
+    
     btn.classList.remove("loading");
     btn.disabled = false;
   }
