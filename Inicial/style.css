@@ -84,20 +84,44 @@ header {
 
 
 
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 
-.btn-entrar {
-  background: none;
+.btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+/* Botão Entrar (mais discreto) */
+.btn.entrar {
+  background: transparent;
+  color: #002480;
+  border: 1.5px solid #2f7cf6;
+}
+
+.btn.entrar:hover {
+  background: #2f7cf6;
+  color: white;
+}
+
+/* Botão Criar Conta (mais chamativo) */
+.btn.criar {
+  background: linear-gradient(135deg, #2f7cf6, #4A90E2);
+  color: white;
   border: none;
-  padding: 0;
-  cursor: pointer;
-  width: 120px; /* Ajuste para o tamanho da imagem */
 }
 
-.btn-entrar img {
-  width: 100px; /* tamanho que você quiser */
-  display: block;
+.btn.criar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(47, 124, 246, 0.4);
 }
-
 
 /* AREA 1 (HERO) */
 .area-1 {
