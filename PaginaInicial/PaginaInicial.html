@@ -32,8 +32,9 @@
 <hr>
 
 <main class="dashboard">
-  <button class="card card-principal" aria-label="Função Principal: Identificar Objetos">
-    <div class="card-Ler">
+  <button class="card card-principal" onclick="document.getElementById('fotoInput').click()" aria-label="Primeira Função: Ler Imagens">
+    <input type="file" id="fotoInput" accept="image/*" style="display: none;">
+    <div class="card-conteudo">
       <span class="card-title">Ler Imagens</span>
       <p>Selecione uma imagem e receba a descrição completa</p>
     </div>

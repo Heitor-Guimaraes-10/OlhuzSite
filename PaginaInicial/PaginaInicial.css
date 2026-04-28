@@ -202,6 +202,14 @@ hr {
 
 .card-principal {
   grid-column: span 3; /* Ocupa 3 das 4 colunas */
+  
+}
+
+/* Classe que o JS vai adicionar quando o arquivo estiver sobre o card */
+.card.drag-over {
+    background: rgba(47, 124, 246, 0.4) !important;
+    border: 3px dashed #0F1A5A !important;
+    transform: scale(1.05);
 }
 
 .card-secundario {
