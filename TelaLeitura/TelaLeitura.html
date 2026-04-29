@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olhuz - Leitura de Imagem</title>
+    <link rel="stylesheet" href="TelaLeitura.css">
+</head>
+<body>
+
+<header>
+  <div class="logo-group">
+    <img src="../Image/logoOlhuz.png" alt="Olhuz Logo" class="logo-img">
+    <div class="brand-text">
+      <h2>Olhuz</h2>
+      <p>A tecnologia que ilumina o invisível</p>
+    </div>
+  </div>
+
+  <nav class="menu-principal">
+    <a href="../Inicial/Index.html">Início</a>
+    <a href="#">Recursos</a>
+    <a href="#">Sobre</a>
+    <a href="#">Contato</a>
+  </nav>
+
+  <a href="#" class="btn sair">Sair</a>
+   
+  </div>
+</header>
+
+
+    <main class="conteudo-principal">
+        <h1 class="titulo-pagina">Descrição de Imagem</h1>
+
+        <div class="painel-flex">
+            <section class="card azul" id="cardUpload">
+                <div id="upload-placeholder" class="placeholder">
+                    <p class="instrucao">Arraste e solte a imagem aqui</p>
+                    <label for="fotoInput" class="btn-adicionar">
+                        <span class="camera-icon">📷</span> Adicionar Imagem
+                    </label>
+                </div>
+
+                <img id="imagemPreview" src="#" alt="Preview da imagem" style="display: none;">
+                
+                <input type="file" id="fotoInput" accept="image/*" hidden>
+            </section>
+
+            <section class="card branco">
+                <div class="texto-resultado">
+                    <h3>Descrição Gerada</h3>
+                    <p id="descricaoTexto">
+                        Aguardando imagem para descrever... O aplicativo irá descrever o conteúdo da imagem para você.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <div class="area-botao">
+            <button id="btnProcessar" class="btn-processar">Processar</button>
+        </div>
+    </main>
+
+    <script src="TelaLeitura.js"></script>
+</body>
+</html>
