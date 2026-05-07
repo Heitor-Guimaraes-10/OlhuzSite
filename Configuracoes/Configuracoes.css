@@ -1,0 +1,192 @@
+
+@font-face {
+  font-family: 'Myanmar Khyaya';
+  src: url('./fonts/MyanmarKhyaya.ttf') format('truetype');
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Myanmar Khyaya', sans-serif;
+  background-color: #d8ebff; 
+  background-image: url("../Image/FundoOlhuz.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #0F1A5A;
+  overflow-x: hidden;
+}
+
+:root {
+  --padding-lateral: clamp(20px, 5vw, 60px);
+}
+
+/* DIVISÓRIA */
+hr {
+  border: none;
+  height: 2px;
+  background-color: #2f7cf6;
+  width: 100%;
+  opacity: 0.3;
+}
+
+/* HEADER */
+header {
+  height: 80px;
+  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: url(../Image/HeaderOlhuz.png);
+  position: relative;
+  z-index: 2;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.btn.sair {
+  background: linear-gradient(135deg, #ff4d4d, #b30000);
+  color: white;
+  border: none;
+  border-radius: 999px; /* deixa bem pill */
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+
+  /* magia visual */
+  box-shadow: 
+    0 2px 6px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  transition: all 0.25s ease;
+}
+
+/* brilho passando de leve */
+.btn.sair::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255,255,255,0.25),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn.sair:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 
+    0 6px 16px rgba(255, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* ativa o brilho */
+.btn.sair:hover::before {
+  opacity: 1;
+}
+
+/* clique */
+.btn.sair:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+hr {
+  border: none;
+  height: 2px;
+  background-color: #2f7cf6;
+  width: 100%;
+  opacity: 0.3;
+}
+
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  width: 60px; /* Reduzido para caber melhor */
+}
+
+.brand-text h2 {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.brand-text p {
+  font-size: 12px;
+}
+
+/* MENU */
+.menu-principal {
+  display: flex;
+  gap: 30px;
+}
+
+.menu-principal a {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #1A1A1A;
+  transition: 0.3s;
+}
+
+.menu-principal a:hover {
+  color: #4A90E2;
+}
+
+.btn-entrar {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 120px; /* Ajuste para o tamanho da imagem */
+}
+
+.btn-entrar img {
+  width: 100px; /* tamanho que você quiser */
+  display: block;
+}
+
+/* 📱 Ajuste para Celular (Um card abaixo do outro) */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  .card-principal, .card-secundario, .card-inferior {
+    grid-column: span 1;
+    height: 200px;
+  }
+}
+
+
+/* 📱 RESPONSIVO */
+@media (max-width: 1024px) {
+    .menu-principal { gap: 15px; }
+    .area-1 { flex-direction: column; text-align: center; }
+    .icones { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 15px; }
+  .auth-buttons { width: 100%; justify-content: center; }
+}
+
