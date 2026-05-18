@@ -164,6 +164,258 @@ hr {
   display: block;
 }
 
+.Titulo-Config {
+    font-size: 32px;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 18px;
+    color: #1a1a1a;
+    margin-bottom: 10px; /* Espacinho entre o título e o card branco */
+    margin-top: 20px;    /* Espacinho para separar do card de cima */
+    font-weight: bold;
+    width: 100%;
+    max-width: 800px;    /* Mesma largura dos cards para alinhar as bordas */
+    text-align: left;    /* Garante que comece no início da linha */
+}
+
+/* ==========================================================
+   PÁGINA DE CONFIGURAÇÕES (CARDS E BOTÕES)
+   ========================================================== */
+
+/* CONTAINER PRINCIPAL */
+.Fundo-Config {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os 3 cards na tela horizontalmente */
+  padding: 40px var(--padding-lateral);
+  width: 100%;
+}
+
+.Titulo-Config {
+  font-size: 42px;
+  color: #1a1a1a;
+  
+  margin-bottom: 20px;
+  font-weight: bold;
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+}
+
+/* CARDS BRANCOS (Classes ajustadas perfeitamente ao seu HTML) */
+.Leitura, .voz-volume, .Interface { 
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); 
+  width: 100%;
+  max-width: 800px;
+}
+
+h2 {
+  font-size: 18px;
+  color: #000000;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+ 
+
+p {
+  font-size: 17px;
+  color: #000000;
+  line-height: 1.5;
+}
+/* LINHAS INTERNAS DE CADA OPÇÃO */
+.Config-Leitura, .Velocidade-Leitura, .tipo-Voz, .Volume, .Tema {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0; 
+  gap: 12px; 
+}
+
+/* Remove a linha divisória sutil do último item de cada card */
+.Velocidade-Leitura, .Volume, .Tema {
+  border-bottom: none;
+}
+
+/* --- CONFIGURAÇÃO DA BARRA DE VOLUME --- */
+#volume {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 180px;
+    height: 8px;
+    border-radius: 5px;
+    outline: none;
+    
+    /* Variável CSS que o JavaScript vai controlar */
+    --valor: 50%; 
+    /* O degradê agora obedece a variável */
+    background: linear-gradient(to right, #2f7cf6 var(--valor), #bebebe var(--valor));
+}
+
+/* Estilo da bolinha azul */
+#volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #2f7cf6;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 0 2px rgba(0,0,0,0.4);
+}
+
+#volume::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 10px rgba(47, 124, 246, 0.8), 0 0 20px rgba(47, 124, 246, 0.4);
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+
+.Velocidade-Leitura span, .tipo-Voz span, .Tema span {
+    display: inline-block;
+    padding: 8px 24px;
+    background-color: #bebebe;
+    color: white;
+    border-radius: 50px; 
+    font-size: 14px;
+    font-weight: bold;
+    
+    /* Transição suave para o brilho e cor */
+    transition: all 0.4s ease-in-out;
+}
+
+.Velocidade-Leitura label:hover span, 
+.tipo-Voz label:hover span, 
+.Tema label:hover span {
+    /* Brilho externo sutil */
+    box-shadow: 0 0 15px rgba(47, 124, 246, 0.4);
+    /* Aumenta o brilho da cor (exposure) */
+    filter: brightness(1.1);
+}
+
+/* TRUQUE FLEXBOX: Empurra o conjunto de controles/botões para a extremidade direita */
+.Config-Leitura .slider,
+.Velocidade-Leitura label:first-of-type, 
+.tipo-Voz label:first-of-type, 
+.Tema label:first-of-type,
+.Volume .btn-volume:first-of-type {
+  margin-left: auto;
+}
+
+/* ESTILO DOS BOTÕES DE SELEÇÃO (Pílulas arredondadas) */
+.Velocidade-Leitura label, .tipo-Voz label, .Tema label {
+  cursor: pointer;
+}
+
+.Velocidade-Leitura input[type="radio"], 
+.tipo-Voz input[type="radio"], 
+.Tema input[type="radio"] {
+  display: none; /* Oculta a bolinha original de rádio do navegador */
+}
+
+.Velocidade-Leitura span, .tipo-Voz span, .Tema span {
+  display: inline-block;
+  padding: 8px 24px;
+  background-color: #bebebe; /* Cor cinza para itens inativos */
+  color: white;
+  border-radius: 50px; 
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Quando selecionado (checked), o span irmão muda para o azul do protótipo */
+.Velocidade-Leitura input[type="radio"]:checked + span,
+.tipo-Voz input[type="radio"]:checked + span,
+.Tema input[type="radio"]:checked + span {
+  background-color: #2f7cf6; 
+}
+
+/* ==========================================================
+   SWITCH LIGA/DESLIGA E CONTROLE DE SLIDER
+   ========================================================== */
+
+/* SWITCH (Ativar Leitura) */
+#leitura-ativada {
+  display: none; /* Oculta o quadrado padrão do checkbox */
+}
+
+.slider {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  background-color: #bebebe;
+  border-radius: 34px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+/* Bolinha interna branca */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.slider:hover {
+  background-color: #2f7cf6; 
+  transform: scale(1.1);      
+  box-shadow: 0 0 12px rgba(47, 124, 246, 0.7);
+}
+
+/* Ativação do Switch */
+#leitura-ativada:checked + .slider {
+  background-color: #2f7cf6;
+}
+
+#leitura-ativada:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/* CONTROLE DE VOLUME (- [======o==] +) */
+.btn-volume {
+  background-color: #2f7cf6;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.btn-volume:hover {
+    background-color: #2f7cf6;
+    transform: scale(1.1);    
+    box-shadow: 0 0 12px rgba(47, 124, 246, 0.7);
+    transition: all 0.3s ease;
+}
+
+#volume::-webkit-slider-thumb:hover {
+    box-shadow: 0 0 10px rgba(47, 124, 246, 0.8), 0 0 20px rgba(47, 124, 246, 0.4);
+    transform: scale(1.2);
+    transition: 0.2s;
+}
+
 /* 📱 Ajuste para Celular (Um card abaixo do outro) */
 @media (max-width: 768px) {
   .dashboard {

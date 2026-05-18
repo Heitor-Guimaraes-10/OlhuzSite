@@ -203,8 +203,15 @@ hr {
 
 .card-principal {
     grid-column: span 3; /* Ocupa as 3 primeiras colunas da primeira linha */
+    align-items: center;
 }
 
+.card-leitura {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 
 .card-secundario {

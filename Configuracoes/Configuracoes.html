@@ -3,33 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Configurações - Olhuz</title>
     <link rel="stylesheet" href="configuracoes.css">
 </head>
 <body>
 
-    <header>
-  <div class="logo-group">
-    <img src="../Image/logoOlhuz.png" alt="Olhuz Logo" class="logo-img">
-    <div class="brand-text">
-      <h2>Olhuz</h2>
-      <p>A tecnologia que ilumina o invisível</p>
+<header>
+    <div class="logo-group">
+        <img src="../Image/logoOlhuz.png" alt="Olhuz Logo" class="logo-img">
+        <div class="brand-text">
+            <h2>Olhuz</h2>
+            <p>A tecnologia que ilumina o invisível</p>
+        </div>
     </div>
-  </div>
 
-  <nav class="menu-principal">
-    <a href="../Inicial/Index.html">Início</a>
-    <a href="#">Recursos</a>
-    <a href="#">Sobre</a>
-    <a href="#">Contato</a>
-  </nav>
+    <nav class="menu-principal">
+        <a href="../Inicial/Index.html">Início</a>
+        <a href="#">Recursos</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
 
-  <a href="#" class="btn sair">Sair</a>
-   
-  </div>
+    <a href="#" class="btn sair">Sair</a>
 </header>
 
 <hr>
+
+<main class="Fundo-Config">
+    <h1 class="Titulo-Config">Configurações</h1>
     
+    <h2 class="Titulo-Leitura">Leitura de Tela</h2>
+    <section class="Leitura">
+        <div class="Config-Leitura">
+            <p>Ativar Leitura de Tela</p>
+            <label class="switch-container">
+                <input type="checkbox" id="leitura-ativada">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="Velocidade-Leitura">
+            <p>Velocidade da Fala</p>
+            <label><input type="radio" name="velocidade" value="0.5"><span>0.5x</span></label>
+            <label><input type="radio" name="velocidade" value="1.0" checked><span>1.0x</span></label>
+            <label><input type="radio" name="velocidade" value="1.5"><span>1.5x</span></label>
+            <label><input type="radio" name="velocidade" value="2.0"><span>2.0x</span></label>
+        </div>
+    </section>
+
+    <h2 class="Voz-fala">Voz e Fala</h2>
+    <section class="voz-volume">
+        <div class="tipo-Voz">
+            <p>Tipo de Voz:</p> 
+            <label><input type="radio" name="voz" value="masculina" checked><span>Masculina</span></label>
+            <label><input type="radio" name="voz" value="feminina"><span>Feminina</span></label>
+        </div>
+
+        <div class="Volume">
+            <p>Volume da Leitura:</p>
+            <button type="button" class="btn-volume" id="btn-menos">-</button>
+            <input type="range" id="volume" min="0" max="100" value="50">
+            <button type="button" class="btn-volume" id="btn-mais">+</button>
+        </div>
+    </section>
+
+    <h2 class="Interface-Titulo">Interface</h2>
+    <section class="Interface">
+        <div class="Tema">
+            <p>Escolha o Tema:</p>
+            <label><input type="radio" name="tema" value="claro" checked><span>Claro</span></label>
+            <label><input type="radio" name="tema" value="escuro"><span>Escuro</span></label>
+        </div>
+    </section>
+</main>
+
+<script src="configuracoes.js"></script>
 </body>
 </html>
