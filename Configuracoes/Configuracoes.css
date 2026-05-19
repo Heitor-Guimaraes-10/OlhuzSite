@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'Myanmar Khyaya';
   src: url('./fonts/MyanmarKhyaya.ttf') format('truetype');
@@ -58,60 +57,38 @@ header {
   background: linear-gradient(135deg, #ff4d4d, #b30000);
   color: white;
   border: none;
-  border-radius: 999px; /* deixa bem pill */
+  border-radius: 999px;
   padding: 6px 16px;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.3px;
   cursor: pointer;
-
-  /* magia visual */
-  box-shadow: 
-    0 2px 6px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2);
   transition: all 0.25s ease;
 }
 
-/* brilho passando de leve */
 .btn.sair::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 999px;
-  background: linear-gradient(
-    120deg,
-    transparent 30%,
-    rgba(255,255,255,0.25),
-    transparent 70%
-  );
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.25), transparent 70%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .btn.sair:hover {
   transform: translateY(-2px) scale(1.03);
-  box-shadow: 
-    0 6px 16px rgba(255, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
-/* ativa o brilho */
 .btn.sair:hover::before {
   opacity: 1;
 }
 
-/* clique */
 .btn.sair:active {
   transform: scale(0.97);
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-hr {
-  border: none;
-  height: 2px;
-  background-color: #2f7cf6;
-  width: 100%;
-  opacity: 0.3;
 }
 
 .logo-group {
@@ -121,7 +98,7 @@ hr {
 }
 
 .logo-img {
-  width: 60px; /* Reduzido para caber melhor */
+  width: 60px;
 }
 
 .brand-text h2 {
@@ -151,46 +128,11 @@ hr {
   color: #4A90E2;
 }
 
-.btn-entrar {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  width: 120px; /* Ajuste para o tamanho da imagem */
-}
-
-.btn-entrar img {
-  width: 100px; /* tamanho que você quiser */
-  display: block;
-}
-
-.Titulo-Config {
-    font-size: 32px;
-    color: #1a1a1a;
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-h2 {
-    font-size: 18px;
-    color: #1a1a1a;
-    margin-bottom: 10px; /* Espacinho entre o título e o card branco */
-    margin-top: 20px;    /* Espacinho para separar do card de cima */
-    font-weight: bold;
-    width: 100%;
-    max-width: 800px;    /* Mesma largura dos cards para alinhar as bordas */
-    text-align: left;    /* Garante que comece no início da linha */
-}
-
-/* ==========================================================
-   PÁGINA DE CONFIGURAÇÕES (CARDS E BOTÕES)
-   ========================================================== */
-
-/* CONTAINER PRINCIPAL */
+/* CONTAINER PRINCIPAL DE CONFIGURAÇÕES */
 .Fundo-Config {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza os 3 cards na tela horizontalmente */
+  align-items: center;
   padding: 40px var(--padding-lateral);
   width: 100%;
 }
@@ -198,7 +140,6 @@ h2 {
 .Titulo-Config {
   font-size: 42px;
   color: #1a1a1a;
-  
   margin-bottom: 20px;
   font-weight: bold;
   width: 100%;
@@ -206,7 +147,18 @@ h2 {
   text-align: left;
 }
 
-/* CARDS BRANCOS (Classes ajustadas perfeitamente ao seu HTML) */
+h2 {
+  font-size: 18px;
+  color: #000000;
+  margin-bottom: 15px;
+  margin-top: 20px;
+  font-weight: bold;
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
+}
+
+/* CARDS BRANCOS */
 .Leitura, .voz-volume, .Interface { 
   background-color: #ffffff;
   border-radius: 12px;
@@ -217,20 +169,12 @@ h2 {
   max-width: 800px;
 }
 
-h2 {
-  font-size: 18px;
-  color: #000000;
-  margin-bottom: 15px;
-  margin-top: 10px;
-  font-weight: bold;
-}
- 
-
 p {
   font-size: 17px;
   color: #000000;
   line-height: 1.5;
 }
+
 /* LINHAS INTERNAS DE CADA OPÇÃO */
 .Config-Leitura, .Velocidade-Leitura, .tipo-Voz, .Volume, .Tema {
   display: flex;
@@ -240,7 +184,6 @@ p {
   gap: 12px; 
 }
 
-/* Remove a linha divisória sutil do último item de cada card */
 .Velocidade-Leitura, .Volume, .Tema {
   border-bottom: none;
 }
@@ -253,14 +196,11 @@ p {
     height: 8px;
     border-radius: 5px;
     outline: none;
-    
-    /* Variável CSS que o JavaScript vai controlar */
     --valor: 50%; 
-    /* O degradê agora obedece a variável */
     background: linear-gradient(to right, #2f7cf6 var(--valor), #bebebe var(--valor));
+    transition: box-shadow 0.2s ease;
 }
 
-/* Estilo da bolinha azul */
 #volume::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -271,37 +211,15 @@ p {
     cursor: pointer;
     border: 2px solid white;
     box-shadow: 0 0 2px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #volume::-webkit-slider-thumb:hover {
     box-shadow: 0 0 10px rgba(47, 124, 246, 0.8), 0 0 20px rgba(47, 124, 246, 0.4);
     transform: scale(1.2);
-    transition: 0.2s;
 }
 
-.Velocidade-Leitura span, .tipo-Voz span, .Tema span {
-    display: inline-block;
-    padding: 8px 24px;
-    background-color: #bebebe;
-    color: white;
-    border-radius: 50px; 
-    font-size: 14px;
-    font-weight: bold;
-    
-    /* Transição suave para o brilho e cor */
-    transition: all 0.4s ease-in-out;
-}
-
-.Velocidade-Leitura label:hover span, 
-.tipo-Voz label:hover span, 
-.Tema label:hover span {
-    /* Brilho externo sutil */
-    box-shadow: 0 0 15px rgba(47, 124, 246, 0.4);
-    /* Aumenta o brilho da cor (exposure) */
-    filter: brightness(1.1);
-}
-
-/* TRUQUE FLEXBOX: Empurra o conjunto de controles/botões para a extremidade direita */
+/* TRUQUE FLEXBOX: Alinha os controles à direita */
 .Config-Leitura .slider,
 .Velocidade-Leitura label:first-of-type, 
 .tipo-Voz label:first-of-type, 
@@ -310,21 +228,16 @@ p {
   margin-left: auto;
 }
 
-/* ESTILO DOS BOTÕES DE SELEÇÃO (Pílulas arredondadas) */
+/* ESTILO DOS BOTÕES DE SELEÇÃO (Pílulas) */
 .Velocidade-Leitura label, .tipo-Voz label, .Tema label {
   cursor: pointer;
-}
-
-.Velocidade-Leitura input[type="radio"], 
-.tipo-Voz input[type="radio"], 
-.Tema input[type="radio"] {
-  display: none; /* Oculta a bolinha original de rádio do navegador */
+  display: inline-flex;
 }
 
 .Velocidade-Leitura span, .tipo-Voz span, .Tema span {
   display: inline-block;
   padding: 8px 24px;
-  background-color: #bebebe; /* Cor cinza para itens inativos */
+  background-color: #bebebe;
   color: white;
   border-radius: 50px; 
   font-size: 14px;
@@ -332,22 +245,23 @@ p {
   transition: all 0.3s ease;
 }
 
-/* Quando selecionado (checked), o span irmão muda para o azul do protótipo */
+/* Hover das Pílulas */
+.Velocidade-Leitura label:hover span, 
+.tipo-Voz label:hover span, 
+.Tema label:hover span {
+  box-shadow: 0 0 15px rgba(47, 124, 246, 0.4);
+  filter: brightness(1.05);
+}
+
+/* Estado Selecionado (Checked) */
 .Velocidade-Leitura input[type="radio"]:checked + span,
 .tipo-Voz input[type="radio"]:checked + span,
 .Tema input[type="radio"]:checked + span {
   background-color: #2f7cf6; 
+  box-shadow: 0 2px 8px rgba(47, 124, 246, 0.3);
 }
 
-/* ==========================================================
-   SWITCH LIGA/DESLIGA E CONTROLE DE SLIDER
-   ========================================================== */
-
-/* SWITCH (Ativar Leitura) */
-#leitura-ativada {
-  display: none; /* Oculta o quadrado padrão do checkbox */
-}
-
+/* SWITCH LIGA/DESLIGA */
 .slider {
   position: relative;
   display: inline-block;
@@ -356,10 +270,9 @@ p {
   background-color: #bebebe;
   border-radius: 34px;
   cursor: pointer;
-  transition: 0.4s;
+  transition: all 0.3s ease;
 }
 
-/* Bolinha interna branca */
 .slider::before {
   position: absolute;
   content: "";
@@ -369,16 +282,14 @@ p {
   bottom: 4px;
   background-color: white;
   border-radius: 50%;
-  transition: 0.4s;
+  transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slider:hover {
-  background-color: #2f7cf6; 
-  transform: scale(1.1);      
-  box-shadow: 0 0 12px rgba(47, 124, 246, 0.7);
+  transform: scale(1.05);      
+  box-shadow: 0 0 12px rgba(47, 124, 246, 0.5);
 }
 
-/* Ativação do Switch */
 #leitura-ativada:checked + .slider {
   background-color: #2f7cf6;
 }
@@ -387,7 +298,7 @@ p {
   transform: translateX(24px);
 }
 
-/* CONTROLE DE VOLUME (- [======o==] +) */
+/* BOTÕES DE VOLUME (+ e -) */
 .btn-volume {
   background-color: #2f7cf6;
   color: white;
@@ -400,45 +311,89 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
 }
 
 .btn-volume:hover {
-    background-color: #2f7cf6;
     transform: scale(1.1);    
     box-shadow: 0 0 12px rgba(47, 124, 246, 0.7);
-    transition: all 0.3s ease;
 }
 
-#volume::-webkit-slider-thumb:hover {
-    box-shadow: 0 0 10px rgba(47, 124, 246, 0.8), 0 0 20px rgba(47, 124, 246, 0.4);
-    transform: scale(1.2);
-    transition: 0.2s;
+/* ==========================================================
+   O SEGREDO DA ACESSIBILIDADE: ESCONDER SEM SUMIR PRO TAB
+   ========================================================== */
+.Velocidade-Leitura input[type="radio"], 
+.tipo-Voz input[type="radio"], 
+.Tema input[type="radio"],
+#leitura-ativada {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
-/* 📱 Ajuste para Celular (Um card abaixo do outro) */
-@media (max-width: 768px) {
-  .dashboard {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  
-  .card-principal, .card-secundario, .card-inferior {
-    grid-column: span 1;
-    height: 200px;
-  }
+/* ==========================================================
+   ESTILOS VISUAIS EXCLUSIVOS QUANDO O TAB ENTRA (FOCUS)
+   ========================================================== */
+
+/* Quando o foco do teclado entra nas pílulas */
+.Velocidade-Leitura input[type="radio"]:focus-visible + span,
+.tipo-Voz input[type="radio"]:focus-visible + span,
+.Tema input[type="radio"]:focus-visible + span {
+  outline: 3px solid #2f7cf6;
+  outline-offset: 3px;
+  box-shadow: 0 0 15px rgba(47, 124, 246, 0.8);
+  filter: brightness(1.1);
 }
 
+/* Quando o foco entra no Switch de ativação */
+#leitura-ativada:focus-visible + .slider {
+  outline: 3px solid #2f7cf6;
+  outline-offset: 3px;
+  box-shadow: 0 0 15px rgba(47, 124, 246, 0.8);
+}
+
+/* Quando o foco entra nos botões de + e - */
+.btn-volume:focus-visible {
+  outline: 3px solid #2f7cf6;
+  outline-offset: 2px;
+  transform: scale(1.1);    
+  box-shadow: 0 0 12px rgba(47, 124, 246, 0.8);
+}
+
+/* Quando o foco entra na barra de arrastar do volume */
+#volume:focus-visible {
+  outline: 3px solid #2f7cf6;
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+
+/* Foco nos links superiores e botão sair */
+.menu-principal a:focus-visible {
+  color: #4A90E2;
+  outline: 3px solid #4A90E2;
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
+.btn.sair:focus-visible {
+  outline: 3px solid #ff4d4d;
+  outline-offset: 4px;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.35);
+}
 
 /* 📱 RESPONSIVO */
 @media (max-width: 1024px) {
     .menu-principal { gap: 15px; }
-    .area-1 { flex-direction: column; text-align: center; }
-    .icones { justify-content: center; }
 }
 
 @media (max-width: 768px) {
-  header { flex-direction: column; gap: 15px; }
-  .auth-buttons { width: 100%; justify-content: center; }
+  header { flex-direction: column; gap: 15px; height: auto; padding: 15px; }
+  .Volume { width: 100%; justify-content: space-between; }
+  #volume { width: 45%; }
 }
-

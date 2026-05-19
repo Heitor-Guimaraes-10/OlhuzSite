@@ -25,43 +25,40 @@
   </nav>
 
   <a href="#" class="btn sair">Sair</a>
-   
-  </div>
 </header>
 
+<main class="conteudo-principal">
+    <h1 class="titulo-pagina">Descrição de Imagem</h1>
 
-    <main class="conteudo-principal">
-        <h1 class="titulo-pagina">Descrição de Imagem</h1>
+    <div class="painel-flex">
+        <section class="card azul" id="cardUpload">
+            <div id="upload-placeholder" class="placeholder">
+                <p class="instrucao">Arraste e solte a imagem aqui</p>
+                <br>
+                <input type="file" id="fotoInput" accept="image/*" class="sr-only">
+                <label for="fotoInput" class="btn-adicionar">
+                    <span class="camera-icon">📷</span> Adicionar Imagem
+                </label>
+            </div>
 
-        <div class="painel-flex">
-            <section class="card azul" id="cardUpload">
-                <div id="upload-placeholder" class="placeholder">
-                    <p class="instrucao">Arraste e solte a imagem aqui</p>
-                    <label for="fotoInput" class="btn-adicionar">
-                        <span class="camera-icon">📷</span> Adicionar Imagem
-                    </label>
-                </div>
+            <img id="imagemPreview" src="#" alt="Preview da imagem carregada" style="display: none;">
+        </section>
 
-                <img id="imagemPreview" src="#" alt="Preview da imagem" style="display: none;">
-                
-                <input type="file" id="fotoInput" accept="image/*" hidden>
-            </section>
+        <section class="card branco" tabindex="0" aria-label="Área da descrição gerada. Use as setas para rolar se necessário.">
+            <div class="texto-resultado">
+                <h3>Descrição Gerada</h3>
+                <p id="descricaoTexto">
+                    Aguardando imagem para descrever... O aplicativo irá descrever o conteúdo da imagem para você.
+                </p>
+            </div>
+        </section>
+    </div>
 
-            <section class="card branco">
-                <div class="texto-resultado">
-                    <h3>Descrição Gerada</h3>
-                    <p id="descricaoTexto">
-                        Aguardando imagem para descrever... O aplicativo irá descrever o conteúdo da imagem para você.
-                    </p>
-                </div>
-            </section>
-        </div>
+    <div class="area-botao">
+        <button id="btnProcessar" class="btn-processar">Processar</button>
+    </div>
+</main>
 
-        <div class="area-botao">
-            <button id="btnProcessar" class="btn-processar">Processar</button>
-        </div>
-    </main>
-
-    <script src="TelaLeitura.js"></script>
+<script src="TelaLeitura.js"></script>
 </body>
 </html>

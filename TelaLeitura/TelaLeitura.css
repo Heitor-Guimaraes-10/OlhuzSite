@@ -77,6 +77,25 @@ header {
   transition: all 0.25s ease;
 }
 
+/* Estilo do botão Adicionar Imagem */
+.btn-adicionar {
+  display: inline-block;
+  background: #3182ce;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(49, 130, 206, 0.3);
+}
+
+.btn-adicionar:hover {
+  background: #2b6cb0;
+  transform: translateY(-2px);
+}
+
 .btn-processar {
   background: #3182ce;
   color: white;
@@ -118,13 +137,13 @@ header {
   overflow: hidden;
 }
 
-/* --- CORREÇÃO DA IMAGEM --- */
+/* --- CARD AZUL (UPLOAD) --- */
 .card.azul {
   background-color: rgba(204, 224, 245, 0.9);
   border: 2px dashed #3182ce;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
 }
 
 #imagemPreview {
@@ -137,7 +156,7 @@ header {
   border-radius: 10px;
 }
 
-.instrucao { font-weight: bold; font-size: 18px; color: #2c5282; }
+.instrucao { font-weight: bold; font-size: 18px; color: #2c5282; margin-bottom: 15px; }
 
 /* --- CARD DE DESCRIÇÃO (TEXTO PRETO) --- */
 .card.branco {
@@ -157,9 +176,9 @@ header {
 .card.branco h3 { margin-bottom: 15px; font-size: 22px; }
 .card.branco p { font-size: 17px; }
 
-/* --- CORREÇÃO DA BARRA DE SCROLL (BEM MAIOR) --- */
+/* --- BARRA DE SCROLL --- */
 .card.branco::-webkit-scrollbar {
-  width: 20px; /* Largura total da barra */
+  width: 20px;
 }
 
 .card.branco::-webkit-scrollbar-track {
@@ -170,22 +189,75 @@ header {
 .card.branco::-webkit-scrollbar-thumb {
   background-color: #3182ce;
   border-radius: 10px;
-  /* Borda removida. Agora o azul preenche totalmente os 20px de largura */
 }
 
 .card.branco::-webkit-scrollbar-thumb:hover {
   background-color: #2b6cb0;
 }
 
-/* Suporte Firefox */
 .card.branco {
-  scrollbar-width: auto; /* Mantém a largura padrão grossa do navegador */
+  scrollbar-width: auto;
   scrollbar-color: #3182ce #f1f1f1;
+}
+
+/* ==========================================================
+   ACESSIBILIDADE: FOCO POR TECLADO E OCULTAÇÃO CORRETA
+   ========================================================== */
+
+/* 1. Oculta o input de arquivo sem removê-lo da navegação por teclado */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* 2. Glow no botão de adicionar imagem quando o input (invisível) recebe foco do Tab */
+#fotoInput:focus-visible + .btn-adicionar {
+  outline: 3px solid #3182ce;
+  outline-offset: 4px;
+  box-shadow: 0 0 15px rgba(49, 130, 206, 0.8);
+  transform: translateY(-2px);
+}
+
+/* 3. Foco no card de rolagem de texto (permite usar setas do teclado) */
+.card.branco:focus-visible {
+  outline: 3px solid #3182ce;
+  outline-offset: 2px;
+  box-shadow: inset 0 0 0 2px #e2e8f0, 0 0 15px rgba(49, 130, 206, 0.4);
+}
+
+/* 4. Foco no botão principal de processar */
+.btn-processar:focus-visible {
+  outline: 3px solid #3182ce;
+  outline-offset: 4px;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(49, 130, 206, 0.8);
+}
+
+/* 5. Foco nos links do menu e botão sair */
+.menu-principal a:focus-visible {
+  color: #3182ce;
+  outline: 3px solid #3182ce;
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
+.btn.sair:focus-visible {
+  outline: 3px solid #ff4d4d;
+  outline-offset: 4px;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(255, 0, 0, 0.35);
 }
 
 /* 5. RESPONSIVIDADE */
 @media (max-width: 768px) {
   .painel-flex { flex-direction: column; align-items: center; }
   .card { width: 100%; max-width: 100%; height: 350px; }
-  header { padding: 0 20px; }
+  header { padding: 0 20px; flex-direction: column; height: auto; padding-top: 15px; padding-bottom: 15px; gap: 15px;}
+  .titulo-pagina { margin-top: 40px; margin-bottom: 30px; }
 }

@@ -192,13 +192,27 @@ hr {
 }
 
 /* Efeito de Hover e Foco (Essencial para quem tem baixa visão) */
-.card:hover, .card:focus {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: #2f7cf6;
-  outline: 4px solid #2f7cf6; /* Feedback visual forte */
-  transform: scale(1.02);
+/* Efeito de Hover (Mouse) */
+.card:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #2f7cf6;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(47, 124, 246, 0.4);
 }
 
+/* Efeito de Foco por Teclado (Acessibilidade Premium) */
+.card:focus-visible {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #2f7cf6;
+    transform: scale(1.02);
+    
+    /* Remove a borda padrão do navegador e aplica uma estilizada com folga (offset) */
+    outline: 4px solid #2f7cf6;
+    outline-offset: 4px;
+    
+    /* Efeito de brilho pulsante para o usuário saber exatamente onde está */
+    box-shadow: 0 0 25px rgba(47, 124, 246, 0.7);
+}
 /* Posicionamento Específico (Conforme seu Protótipo) */
 
 .card-principal {
@@ -227,6 +241,22 @@ hr {
   font-size: 2rem;
   font-weight: bold;
   display: block;
+}
+            
+/* Links do Menu Principal ao navegar com o TAB */
+.menu-principal a:focus-visible {
+    color: #4A90E2;
+    outline: 3px solid #4A90E2;
+    outline-offset: 6px;
+    border-radius: 4px;
+}
+
+/* Botão Sair ao navegar com o TAB */
+.btn.sair:focus-visible {
+    outline: 3px solid #ff4d4d;
+    outline-offset: 4px;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 16px rgba(255, 0, 0, 0.35);
 }
 
 /* 📱 Ajuste para Celular (Um card abaixo do outro) */
